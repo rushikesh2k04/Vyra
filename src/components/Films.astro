@@ -1,0 +1,224 @@
+---
+const films = [
+  {
+    title: "Hi Nanna (హాయ్ నాన్న)",
+    year: "2023",
+    description: "A touching story of six-year-old Mahi and her father Viraj, exploring love, loss, and family bonds. When Mahi's curiosity about her mother leads to an unexpected journey, their lives intertwine with Yashna, bringing profound revelations and emotional healing.",
+    image: "https://cdn.telugu360.com/wp-content/uploads/2023/07/maxresdefault-8-1024x576.jpg",
+    director: "Shouryuv",
+    starring: "Nani, Mrunal Thakur",
+    streamingLink: "https://www.netflix.com/in/title/81682028",
+    hoverGif: "/src/components/vid/hii.gif",
+    pageLink: "/films/hi-nanna"
+  },
+  {
+    title: "Matka (మట్కా)",
+    year: "2024",
+    description: "Based on true events, this epic tale follows Vasu's rise from poverty to building a gambling empire between 1958-1982, culminating in a confrontation with the government that shakes the nation.",
+    image: "src/components/img/matka.png",
+    director: "Karuna Kumar",
+    starring: "Varun Tej, Meenakshi Chaudhary",
+    streamingLink: "https://www.primevideo.com/detail/Matka/0NUKTYDUQO2KYCTJ2RK4CTASXF",
+    hoverGif: "/src/components/vid/maa.gif",
+    pageLink: "/films/matka"
+  }
+];
+---
+<section id="films" class="films">
+  <div class="container">
+    <h2>Latest Releases</h2>
+    <div class="film-grid">
+      {films.map(film => (
+        <div class="film-card">
+          <a href={film.pageLink}>
+            <div class="card-inner">
+              <div class="image-container">
+                <img src={film.image} alt={film.title} loading="lazy" class="main-image" />
+                <img src={film.hoverGif} alt={`${film.title} gif`} loading="lazy" class="hover-gif" />
+                <div class="image-overlay">
+                  <span class="watch-now">Learn More</span>
+                </div>
+              </div>
+              <div class="film-info">
+                <h3>{film.title}</h3>
+                <p class="meta">
+                  <span class="year">{film.year}</span>
+                  <span class="dot">•</span>
+                  <span class="director">Dir: {film.director}</span>
+                </p>
+                <p class="starring">Starring: {film.starring}</p>
+                <p class="description">{film.description}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .films {
+    padding: 6rem 0;
+    background: rgb(var(--background));
+    border-top: 1px solid rgba(var(--accent), 0.1);
+    perspective: 2000px;
+  }
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  h2 {
+    text-align: left;
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: rgb(var(--accent));
+  }
+  .film-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+  }
+  .film-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(20, 20, 20, 0.5);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  .film-card a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+  }
+  .film-card:hover .card-inner {
+    transform: translateZ(50px) rotateX(5deg) rotateY(5deg);
+  }
+  .image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    transform-style: preserve-3d;
+  }
+  .main-image, .hover-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .hover-gif {
+    opacity: 0;
+  }
+  .film-card:hover .hover-gif {
+    opacity: 1;
+  }
+  .film-card:hover .main-image {
+    opacity: 0;
+  }
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.6)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .watch-now {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+  }
+  .film-card:hover .image-overlay {
+    opacity: 1;
+  }
+  .film-card:hover .watch-now {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .film-info {
+    padding: 1.5rem;
+    background: rgba(20, 20, 20, 0.95);
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .film-card:hover .film-info {
+    transform: translateZ(40px);
+  }
+  .film-info h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: rgb(var(--accent));
+    font-family: 'Cinzel', serif;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .film-card:hover .film-info h3 {
+    transform: translateZ(20px);
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+  }
+  .dot {
+    color: rgb(var(--accent));
+  }
+  .starring {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0.5rem 0;
+  }
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0.5rem 0 0 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+    .film-grid {
+      grid-template-columns: 1fr;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+  }
+</style>

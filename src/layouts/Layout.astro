@@ -1,0 +1,77 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Vyra Entertainment - Leading Film Production House" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="https://i.postimg.cc/nzkz97Dd/logo.png">
+		<meta name="generator" content={Astro.generator} />
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+		<footer class="footer">
+			<div class="container">
+				<p>&copy; 2025 Copyright &copy; vyra entertainments. All Rights Reserved . Done by REJOLT Edtech FellowBatch(2024-2025)</p>
+			</div>
+		</footer>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--primary: 255, 255, 255;
+		--accent: 197, 157, 95;
+		--text-light: 248, 249, 250;
+		--background: 10, 10, 10;
+	}
+	html {
+		font-family: 'Poppins', system-ui, sans-serif;
+		background: rgb(var(--background));
+		scroll-behavior: smooth;
+		color: rgb(var(--primary));
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		min-height: 100vh;
+		line-height: 1.6;
+	}
+	* {
+		box-sizing: border-box;
+	}
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+	::-webkit-scrollbar-track {
+		background: rgb(var(--background));
+	}
+	::-webkit-scrollbar-thumb {
+		background: rgb(var(--accent));
+		border-radius: 4px;
+	}
+	::selection {
+		background: rgb(var(--accent));
+		color: rgb(var(--background));
+	}
+	.footer {
+		padding: 1.5rem 0;
+		background: rgb(var(--background));
+		border-top: 1px solid rgba(var(--accent), 0.1);
+		text-align: center;
+	}
+	.footer p {
+		margin: 0;
+		color: rgb(var(--primary));
+		font-size: 0.9rem;
+	}
+</style>

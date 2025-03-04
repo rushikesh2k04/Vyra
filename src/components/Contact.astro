@@ -1,0 +1,95 @@
+---
+---
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <div class="content">
+      <div class="info">
+        <div class="info-item">
+          <h3>Address</h3>
+          <p>Plot No: 25, 1177 Ab, Rd Number 56, Jubilee Hills, Hyderabad,<br> Telangana 500034</p>
+        </div>
+        <div class="info-item">
+          <h3>Social Media</h3>
+          <div class="social-links">
+            <a href="https://instagram.com/vyraents" target="_blank" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com/vyraentertainments" target="_blank" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://youtube.com/@vyraentertainments" target="_blank" title="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://linktr.ee/vyraents" target="_blank" title="Book Tickets">
+              <i class="fas fa-ticket"></i>
+            </a>
+          </div>
+        </div>
+        <div class="info-item">
+          <h3>Phone</h3>
+          <p>+1 (323) 555-0123</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 6rem 0;
+    background: rgb(var(--background));
+    border-top: 1px solid rgba(var(--accent), 0.1);
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  h2 {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: rgb(var(--accent));
+  }
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+  .info-item h3 {
+    color: rgb(var(--accent));
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+  }
+  .info-item p {
+    line-height: 1.6;
+    color: rgb(var(--primary));
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .social-links a {
+    color: rgb(var(--primary));
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+  }
+  .social-links a:hover {
+    color: rgb(var(--accent));
+  }
+
+  @media (max-width: 768px) {
+    .info {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

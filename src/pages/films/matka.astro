@@ -1,0 +1,513 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const film = {
+  title: "Matka (మట్కా)",
+  year: "2024",
+  description: "Based on true events, this epic tale follows Vasu's rise from poverty to building a gambling empire between 1958-1982, culminating in a confrontation with the government that shakes the nation.",
+  image: "https://i.postimg.cc/gcSFwr1g/matka.png",
+  director: "Karuna Kumar",
+  starring: "Varun Tej, Meenakshi Chaudhary",
+  songs: [
+    {
+      title: "Le Le Raja",
+      url: "https://youtu.be/KSWTG0BtXtg?si=LdYfjImZf1RIZa8U",
+      thumbnail: "https://i.ytimg.com/vi/KSWTG0BtXtg/maxresdefault.jpg"
+    },
+    {
+      title: "Thassadiyya",
+      url: "https://youtu.be/g9XWqqW2628?si=K72NMrFeBm4_10W5",
+      thumbnail: "https://i.ytimg.com/vi/g9XWqqW2628/maxresdefault.jpg"
+    },
+    {
+      title: "Rama Talkies Ramp",
+      url: "https://youtu.be/z2j1sJxRbwE?si=nL9xGI_h6ZczQm4P",
+      thumbnail: "https://i.ytimg.com/vi/z2j1sJxRbwE/maxresdefault.jpg"
+    },
+    {
+      title: "Paralokam Pripodama",
+      url: "https://youtu.be/KGb5CiKojWc?si=KWWUz4n3Un2wYe6x",
+      thumbnail: "https://i.ytimg.com/vi/KGb5CiKojWc/maxresdefault.jpg"
+    },
+    {
+      title: "Emanukoni",
+      url: "https://youtu.be/JgjW1cOfFg4?si=c7rQfuz1dDeX4wUK",
+      thumbnail: "https://i.ytimg.com/vi/JgjW1cOfFg4/maxresdefault.jpg"
+    }
+],
+
+  cast: [
+    { 
+      name: "Varun Tej",
+      role: "Matka Vasu",
+      image: "https://i.postimg.cc/hvzfk6Hx/varun.jpg"
+    },
+    { 
+      name: "Meenakshi Chaudhary",
+      role: "Sujatha",
+      image: "https://i.postimg.cc/8Pf69fS3/meenakshi.jpg"
+    },
+    { 
+      name: "Nora Fatehi",
+      role: "Actress",
+      image: "https://i.postimg.cc/hGcQXCdW/nora.jpg"
+    },
+    { 
+      name: "Saloni Aswani",
+      role: "Padma",
+      image: "https://i.postimg.cc/zBfLjV7x/saloni.jpg"
+    },
+    { 
+      name: "Kishore",
+      role: "Nani",
+      image: "https://i.postimg.cc/8C4JMhRF/kishore.jpg"
+    },
+    { 
+      name: "Naveen Chandra",
+      role: "Sahu",
+      image: "https://i.postimg.cc/T3rWY8hJ/naveen.jpg"
+    },
+    { 
+      name: "John Vijay",
+      role: "KB",
+      image: "https://i.postimg.cc/W1Rkvpp4/jhon.jpg"
+    },
+    { 
+      name: "Ajay Ghosh",
+      role: "Chilla Appal Reddy",
+      image: "https://i.postimg.cc/Bbk1t4xM/gosh.jpg"
+    },
+    { 
+      name: "Harish Uthaman",
+      role: "Parasuram",
+      image: "https://i.postimg.cc/xj4m6yWM/harish.jpg"
+    },
+    { 
+      name: "Styam Rajesh",
+      role: "sivudu",
+      image: "https://i.postimg.cc/26X1XrXr/styam.jpg"
+    }
+    
+  ],
+  trailer: "https://youtu.be/FKtnAhHnfUo?si=RSnvlJQlZb4biom2",
+  streamingLink: "https://www.primevideo.com/detail/Matka/0NUKTYDUQO2KYCTJ2RK4CTASXF"
+};
+---
+
+<Layout title={`${film.title} - Vyra Entertainment`}>
+  <Header />
+  <div class="film-page">
+    <div class="hero">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>{film.title}</h1>
+        <p class="year">{film.year}</p>
+      </div>
+    </div>
+    
+    <section class="film-details">
+      <div class="container">
+        <div class="film-content">
+          <div class="poster">
+            <img src={film.image} alt={film.title} />
+          </div>
+          <div class="info">
+            <h2>About the Film</h2>
+            <p class="description">{film.description}</p>
+            
+            <div class="meta">
+              <div class="meta-item">
+                <h3>Director</h3>
+                <p>{film.director}</p>
+              </div>
+              <div class="meta-item">
+                <h3>Starring</h3>
+                <p>{film.starring}</p>
+              </div>
+            </div>
+
+            <a href={film.streamingLink} target="_blank" rel="noopener noreferrer" class="watch-button">
+              Watch Now
+            </a>
+          </div>
+        </div>
+
+        <div class="cast-section">
+          <h2>Cast & Characters</h2>
+          <div class="cast-grid">
+            {film.cast.map(actor => (
+              <div class="cast-member">
+                <div class="cast-image">
+                  <img src={actor.image} alt={actor.name} />
+                </div>
+                <div class="cast-info">
+                  <h4>{actor.name}</h4>
+                  <p>as {actor.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="trailer-section">
+          <h2>Official Trailer</h2>
+          <div class="video-container">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/FKtnAhHnfUo"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="songs-section">
+          <h2>Songs</h2>
+          <div class="songs-slider">
+            <div class="slider-container" id="songsSlider">
+              {film.songs.map(song => (
+                <a href={song.url} target="_blank" rel="noopener noreferrer" class="song-card">
+                  <div class="song-thumbnail">
+                    <img src={song.thumbnail} alt={song.title} loading="lazy" />
+                    <div class="play-overlay">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                  <h4>{song.title}</h4>
+                </a>
+              ))}
+              {/* Duplicate first few items for seamless loop */}
+              {film.songs.slice(0, 3).map(song => (
+                <a href={song.url} target="_blank" rel="noopener noreferrer" class="song-card clone">
+                  <div class="song-thumbnail">
+                    <img src={song.thumbnail} alt={song.title} loading="lazy" />
+                    <div class="play-overlay">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                  <h4>{song.title}</h4>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  let scrollInterval: number;
+  const slider = document.getElementById('songsSlider');
+  const scrollSpeed = 1; // Pixels per frame
+  const frameRate = 60; // Frames per second
+
+  function startAutoScroll() {
+    scrollInterval = setInterval(() => {
+      if (slider) {
+        slider.scrollLeft += scrollSpeed;
+        
+        // Reset scroll position when reaching end
+        if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 200)) {
+          slider.scrollLeft = 0;
+        }
+      }
+    }, 1000 / frameRate);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(scrollInterval);
+  }
+
+  // Start auto-scroll when page loads
+  startAutoScroll();
+
+  // Pause on hover
+  if (slider) {
+    slider.addEventListener('mouseenter', stopAutoScroll);
+    slider.addEventListener('mouseleave', startAutoScroll);
+    slider.addEventListener('touchstart', stopAutoScroll);
+    slider.addEventListener('touchend', startAutoScroll);
+  }
+</script>
+
+<style>
+  .film-page {
+    padding-top: 80px;
+  }
+  .hero {
+    height: 60vh;
+    background-image: url('https://i.postimg.cc/gcSFwr1g/matka.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 1rem;
+  }
+  .content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+    color: rgb(var(--accent));
+  }
+  .year {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+  .film-details {
+    padding: 4rem 0;
+    background: rgb(var(--background));
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .film-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+  .poster img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .info h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: rgb(var(--accent));
+    margin-bottom: 1.5rem;
+  }
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .meta-item h3 {
+    font-family: 'Cinzel', serif;
+    color: rgb(var(--accent));
+    margin-bottom: 0.5rem;
+  }
+  .cast-section {
+    margin: 4rem 0;
+  }
+  .cast-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: rgb(var(--accent));
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+  .cast-member {
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+  }
+  .cast-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgb(var(--accent));
+  }
+  .cast-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cast-info h4 {
+    margin: 0;
+    color: rgb(var(--accent));
+    font-size: 1.1rem;
+  }
+  .cast-info p {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  .watch-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: rgb(var(--accent));
+    color: rgb(var(--background));
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+  }
+  .watch-button:hover {
+    transform: translateY(-2px);
+  }
+  .trailer-section {
+    margin-top: 4rem;
+  }
+  .trailer-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: rgb(var(--accent));
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .songs-section {
+    margin-top: 4rem;
+  }
+  .songs-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: rgb(var(--accent));
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .songs-slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
+  }
+  .slider-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: hidden;
+    padding: 0.5rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  .song-card {
+    flex: 0 0 200px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  .song-card:hover {
+    transform: translateY(-5px);
+  }
+  .song-thumbnail {
+    position: relative;
+    width: 200px;
+    height: 112px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  .song-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .play-overlay i {
+    color: white;
+    font-size: 2rem;
+  }
+  .song-card:hover .play-overlay {
+    opacity: 1;
+  }
+  .song-card:hover .song-thumbnail img {
+    transform: scale(1.1);
+  }
+  .song-card h4 {
+    color: rgb(var(--primary));
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  .song-card:hover h4 {
+    color: rgb(var(--accent));
+  }
+  .clone {
+    opacity: 0.99; /* Prevent rendering issues */
+  }
+
+  @media (max-width: 768px) {
+    .content h1 {
+      font-size: 2.5rem;
+    }
+    .film-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .meta {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .cast-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .cast-image {
+      width: 120px;
+      height: 120px;
+    }
+    .song-card {
+      flex: 0 0 160px;
+    }
+    .song-thumbnail {
+      width: 160px;
+      height: 90px;
+    }
+    .song-card h4 {
+      font-size: 0.8rem;
+    }
+  }
+</style>

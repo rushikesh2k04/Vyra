@@ -1,0 +1,161 @@
+---
+---
+<section id="awards" class="awards">
+  <div class="container">
+    <h2>Awards & Recognition</h2>
+    <h3 class="movie-title">For "Hi Nanna" (2023)</h3>
+    <div class="awards-grid">
+      <div class="award-item">
+        <img src="/src/components/img/awards.png" alt="Award Trophy" class="award-icon" />
+        <h3>Best Film</h3>
+        <h5>Filmfare Awards</h5>
+        <span class="movie">Hi Nanna</span>
+      </div>
+      <div class="award-item">
+        <img src="/src/components/img/awards.png" alt="Award Trophy" class="award-icon" />
+        <h3>Best Actor</h3>
+        <h5>Filmfare Awards</h5>
+        <span class="movie">Hi Nanna</span>
+      </div>
+      <div class="award-item">
+        <img src="/src/components/img/awards.png" alt="Award Trophy" class="award-icon" />
+        <h3>Best Actress</h3>
+        <h5>SIIMA, Filmfare & IIFA Utsavam</h5>
+        <span class="movie">Hi Nanna</span>
+      </div>
+      <div class="award-item">
+        <img src="/src/components/img/awards.png" alt="Award Trophy" class="award-icon" />
+        <h3>Best Feature Film</h3>
+        <h5>Athens International Art Film Festival</h5>
+        <span class="movie">Hi Nanna</span>
+      </div>
+      <div class="award-item">
+        <img src="/src/components/img/awards.png" alt="Award Trophy" class="award-icon" />
+        <h3>Best Soundtrack</h3>
+        <h5>Oniros Film Awards</h5>
+        <span class="movie">Hi Nanna</span>
+      </div>
+      <div class="award-item">
+        <img src="/src/components/img/awards.png" alt="Award Trophy" class="award-icon" />
+        <h3>Best Director</h3>
+        <h5>SIIMA & Filmfare Awards</h5>
+        <span class="movie">Hi Nanna</span>
+      </div>
+      <div class="award-item">
+        <img src="/src/components/img/awards.png" alt="Award Trophy" class="award-icon" />
+        <h3>Best Debutant Director</h3>
+        <h5>SIIMA & Filmfare Awards</h5>
+        <span class="movie">Hi Nanna</span>
+      </div>
+      <div class="award-item">
+        <img src="/src/components/img/awards.png" alt="Award Trophy" class="award-icon" />
+        <h3>Best Supporting Role</h3>
+        <h5>SIIMA Awards</h5>
+        <span class="movie">Hi Nanna</span>
+      </div>
+      <div class="award-item">
+        <img src="/src/components/img/awards.png" alt="Award Trophy" class="award-icon" />
+        <h3>Best Playback Singer (Female)</h3>
+        <h5>SIIMA Awards</h5>
+        <span class="movie">Hi Nanna</span>
+      </div>
+      <div class="award-item">
+        <img src="/src/components/img/awards.png" alt="Award Trophy" class="award-icon" />
+        <h3>Best Debutant Producer</h3>
+        <h5>SIIMA Awards</h5>
+        <span class="movie">Hi Nanna</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .awards {
+    padding: 6rem 0;
+    background: rgb(var(--background));
+    border-top: 1px solid rgba(var(--accent), 0.1);
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  h2 {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: rgb(var(--accent));
+  }
+  .movie-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(var(--primary));
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+  }
+  .award-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+    padding: 1rem;
+  }
+  .award-item:hover {
+    transform: translateY(-10px);
+  }
+  .award-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+  h3 {
+    font-size: 1.2rem;
+    color: rgb(var(--primary));
+    margin: 0;
+    font-weight: 500;
+  }
+  h5 {
+    font-size: 0.9rem;
+    color: rgb(var(--accent));
+    margin: 0.5rem 0;
+    font-weight: 400;
+  }
+  .movie {
+    font-size: 0.8rem;
+    color: rgba(var(--primary), 0.6);
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+    .awards-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .award-icon {
+      width: 100px;
+      height: 100px;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    h5 {
+      font-size: 0.8rem;
+    }
+    .movie {
+      font-size: 0.7rem;
+    }
+    .movie-title {
+      font-size: 1.2rem;
+    }
+  }
+</style>

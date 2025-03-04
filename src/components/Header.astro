@@ -1,0 +1,135 @@
+---
+---
+<header class="header">
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="/src/components/img/logo copy.png" alt="Vyra Logo" class="logo-image" />
+        <div class="text">
+          <h1>VYRA</h1>
+          <span>ENTERTAINMENTS</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#films">Films</a></li>
+        <li class="last-item"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+  }
+  .logo-image {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) saturate(100%) invert(77%) sepia(38%) saturate(349%) hue-rotate(356deg) brightness(88%) contrast(86%);
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo h1 {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(var(--accent));
+    letter-spacing: 0.2em;
+  }
+  .logo span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: rgb(var(--accent));
+    letter-spacing: 0.3em;
+    margin-top: -5px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links li {
+    padding: 0;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+    padding: 0;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: rgb(var(--accent));
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover {
+    color: rgb(var(--accent));
+  }
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  .last-item {
+    margin-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    .logo-image {
+      height: 30px;
+    }
+    .logo h1 {
+      font-size: 1.5rem;
+    }
+    .logo span {
+      font-size: 0.7rem;
+    }
+    .nav-links {
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+    }
+  }
+</style>
